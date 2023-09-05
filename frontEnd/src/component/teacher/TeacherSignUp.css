@@ -1,0 +1,11 @@
+.sign-up-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sign-up-form input {
+    padding: 5px;
+    height: 40px;
+}

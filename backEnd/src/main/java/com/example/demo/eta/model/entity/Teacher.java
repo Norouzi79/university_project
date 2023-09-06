@@ -1,10 +1,13 @@
 package com.example.demo.eta.model.entity;
 
+import io.swagger.annotations.ApiModel;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "teacher")
 @Table(name = "teacher")
+@ApiModel
 public class Teacher {
 
     @Id

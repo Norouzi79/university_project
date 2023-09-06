@@ -1,9 +1,12 @@
 package com.example.demo.etaforperson.eta.model.entity;
 
+import io.swagger.annotations.ApiModel;
+
 import javax.persistence.*;
 
 @Entity(name = "person")
 @Table(name = "person")
+@ApiModel
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -23,7 +23,7 @@ public class AdminController {
 
 
     // http://localhost:8081/admin/listAllCourse
-    @RequestMapping("/listAllCourse")
+    @GetMapping("/listAllCourse")
     public List<Course> listCourse() {
         List<Course> courseList = courseService.listAll();
         for (Course course : courseList) {
@@ -34,14 +34,14 @@ public class AdminController {
     }
 
     // http://localhost:8081/admin/insertCourse?courseName=os
-    @RequestMapping("/insertCourse")
+    @PostMapping("/insertCourse")
     public void insertCourse(@ModelAttribute Course course) {
         courseService.insertCourse(course);
     }
 
 
     //http://localhost:8081/admin/updateCourse?courseId=1&courseName=DB
-    @RequestMapping("/updateCourse")
+    @PostMapping("/updateCourse")
     public void updateCourse(@ModelAttribute Course course , @RequestHeader("teacherItem") List<Teacher> teacherList) {
 
         List<Teacher> teachers = teacherList;
@@ -53,7 +53,7 @@ public class AdminController {
 
     }
 
-    @RequestMapping("/deleteCourse")
+    @DeleteMapping("/deleteCourse")
     public void deleteCourse(@RequestParam int courseId) {
         courseService.deleteCourse(courseId);
 
@@ -61,7 +61,7 @@ public class AdminController {
 
 
     // http://localhost:8081/admin/listAllTeacher
-    @RequestMapping("/listAllTeacher")
+    @GetMapping("/listAllTeacher")
     public List<Teacher> listAllTeacher() {
 
         return teacherService.listAllTeacher();
@@ -71,7 +71,7 @@ public class AdminController {
 
 
 
-    @RequestMapping("/deleteTeacher")
+    @DeleteMapping("/deleteTeacher")
     public void deleteTeacher(@RequestParam int teacherId) {
         teacherService.deleteTeacher(teacherId);
     }

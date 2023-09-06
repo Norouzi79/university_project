@@ -21,19 +21,19 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-    @RequestMapping("/signUp")
+    @PostMapping("/signUp")
     public void signUp(@ModelAttribute Teacher teacher)  {
         teacherService.insertTeacher(teacher);
     }
 
 
-    @RequestMapping("/listCourse")
+    @GetMapping("/listCourse")
     public List<Course> listCourse() {
         List<Course> courses = courseService.listAll();
         return courses;
     }
 
-    @RequestMapping("/takeCourse")
+    @PostMapping("/takeCourse")
     public void teacherTakeCourse(@ModelAttribute Course course , @ModelAttribute Teacher teacher) {
         teacherService.teacherTakeCourse(course, teacher);
     }

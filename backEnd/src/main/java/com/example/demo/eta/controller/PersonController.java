@@ -15,19 +15,19 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping("/selectAllPerson")
+    @GetMapping("/selectAllPerson")
     public List<Person>    selectAllPerson() {
         return personService.selectAllPerson();
 
     }
 
-    @RequestMapping("/selectOnePerson")
+    @GetMapping("/selectOnePerson")
     public Person selectOnePerson(@RequestParam int personId) {
         System.out.println(personService.selectOnePerson(personId).getName() + "called");
         return personService.selectOnePerson(personId);
     }
 
-    @RequestMapping("/insertPerson")
+    @PostMapping("/insertPerson")
     public void insertPerson(@ModelAttribute Person person) {
         personService.insertPerson(person);
     }
